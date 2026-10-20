@@ -4,7 +4,7 @@
     <h1 class="text-3xl font-bold">Alle boeken</h1>
     <p class="mt-1 text-stone-500">{{ count($books) }} boeken in het bos</p>
 
-    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         @forelse ($books as $id => $book)
             <x-book-card :book="$book" :id="$id" @class(['sm:col-span-2' => $loop->first]) />
         @empty
