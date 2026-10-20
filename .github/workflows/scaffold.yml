@@ -15,7 +15,7 @@ jobs:
   scaffold:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -25,7 +25,7 @@ jobs:
           tools: composer:v2
           coverage: none
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
 
@@ -40,19 +40,23 @@ jobs:
           echo "::notice title=laravel new --help::$(laravel new --help | tr '\n' '|' | cut -c1-3500)"
 
       - name: Nieuw project
+        shell: bash
         run: |
+          set -eo pipefail
+          trap 'echo "::error title=Mislukt bij::$BASH_COMMAND"' ERR
           if [ -f artisan ]; then echo "Er staat al een project."; exit 0; fi
           cd /tmp
-          laravel new boekenbos --livewire --pest --database=sqlite --no-interaction \
-            || composer create-project laravel/livewire-starter-kit boekenbos --no-interaction
+          laravel new boekenbos --livewire --pest --database=sqlite --npm --no-boost --no-interaction
           cd boekenbos
-          echo "::notice title=Versies::$(php artisan --version) | $(ls)"
-          rm -rf .git node_modules vendor
+          echo "::notice title=Versie::$(php artisan --version)"
+          echo "::notice title=Bestanden::$(ls -A | tr '\n' ' ')"
+          echo "::notice title=routes/web.php::$(cat routes/web.php | tr '\n' '|')"
+          rm -rf .git node_modules vendor public/build
           cd "$GITHUB_WORKSPACE"
-          rsync -a /tmp/boekenbos/ ./
+          cp -a /tmp/boekenbos/. ./
           git config user.name "Lantaarnbos"
           git config user.email "actions@users.noreply.github.com"
           git add -A
-          git commit -m "Les 4.1.1: nieuw Laravel 13-project (laravel new boekenbos, Livewire-starterkit)"
+          git commit -q -m "Les 4.1.1: nieuw Laravel 13-project (laravel new boekenbos, Livewire-starterkit)"
           git tag les-4-1-1
           git push origin HEAD --tags
