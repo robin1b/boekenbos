@@ -1,0 +1,58 @@
+# Maakt eenmalig het Laravel 13-project aan (zoals `laravel new boekenbos` met de
+# Livewire-starterkit) en tagt het als de stand na les 4.1.1. Draait opnieuw als
+# dit bestand verandert, maar doet niets meer zodra er al een project staat.
+name: scaffold
+
+on:
+  push:
+    paths: ['.github/workflows/scaffold.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          tools: composer:v2
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Laravel-installer
+        run: |
+          composer global require laravel/installer --no-interaction
+          echo "$(composer global config bin-dir --absolute -q)" >> "$GITHUB_PATH"
+
+      - name: Opties van de installer tonen
+        run: |
+          laravel --version
+          echo "::notice title=laravel new --help::$(laravel new --help | tr '\n' '|' | cut -c1-3500)"
+
+      - name: Nieuw project
+        run: |
+          if [ -f artisan ]; then echo "Er staat al een project."; exit 0; fi
+          cd /tmp
+          laravel new boekenbos --livewire --pest --database=sqlite --no-interaction \
+            || composer create-project laravel/livewire-starter-kit boekenbos --no-interaction
+          cd boekenbos
+          echo "::notice title=Versies::$(php artisan --version) | $(ls)"
+          rm -rf .git node_modules vendor
+          cd "$GITHUB_WORKSPACE"
+          rsync -a /tmp/boekenbos/ ./
+          git config user.name "Lantaarnbos"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -m "Les 4.1.1: nieuw Laravel 13-project (laravel new boekenbos, Livewire-starterkit)"
+          git tag les-4-1-1
+          git push origin HEAD --tags
