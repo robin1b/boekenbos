@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('home');
@@ -10,9 +11,7 @@ Route::get('/hallo', function () {
 
 Route::view('/over', 'over')->name('over');
 
-Route::get('/boeken', function () {
-    return 'Alle boeken';
-})->name('books.index');
+Route::get('/boeken', [BookController::class, 'index'])->name('books.index');
 
 Route::get('/boeken/{id}', function (int $id) {
     return 'Boek nummer '.$id;
