@@ -1,14 +1,19 @@
 <x-layouts::boekenbos>
     <x-slot:title>Alle boeken</x-slot>
 
-    <h1 class="text-3xl font-bold">Alle boeken</h1>
-    <p class="mt-1 text-stone-500">{{ count($books) }} boeken in het bos</p>
+    <x-slot:header>
+        <h1 class="bb-titel bb-titel-xl">Alle boeken</h1>
+        <p>{{ count($books) }} boeken in het bos</p>
+    </x-slot>
 
-    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bb-boeken">
         @forelse ($books as $id => $book)
-            <x-book-card :book="$book" :id="$id" @class(['sm:col-span-2' => $loop->first]) />
+            <x-book-card :book="$book" :id="$id" />
         @empty
-            <p class="text-stone-500 sm:col-span-2">Er staan nog geen boeken in het bos.</p>
+            <div class="bb-leeg col-span-full">
+                <img src="{{ asset('images/lege-boekenplank.svg') }}" alt="">
+                <p>Er staan nog geen boeken in het bos.</p>
+            </div>
         @endforelse
     </div>
 </x-layouts::boekenbos>

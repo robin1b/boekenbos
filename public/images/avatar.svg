@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lezer">
+  <title>Lezer</title>
+  <circle cx="32" cy="32" r="32" fill="#e7efe9"/>
+  <circle cx="32" cy="26" r="11" fill="#3f7a52"/>
+  <path d="M12 56 C14 44 22 39 32 39 C42 39 50 44 52 56 Z" fill="#3f7a52"/>
+</svg>
