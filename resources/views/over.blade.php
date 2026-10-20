@@ -2,10 +2,23 @@
 <html lang="nl">
 <head>
     <meta charset="utf-8">
-    <title>Over Boekenbos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Over {{ config('app.name') }}</title>
+    @vite(['resources/css/app.css'])
 </head>
-<body>
-    <h1>Over Boekenbos</h1>
-    <p>Hier hou ik bij welke boeken ik lees en wat ik ervan vind.</p>
+<body class="min-h-screen bg-stone-50 text-stone-800">
+    <main class="mx-auto max-w-2xl p-8">
+        <h1 class="text-3xl font-bold">Over {{ config('app.name') }}</h1>
+
+        <p class="mt-4">Hier hou ik bij welke boeken ik lees en wat ik ervan vind.</p>
+
+        <ul class="mt-4 list-disc pl-6">
+            <li>Boeken bijhouden met een titel en een auteur</li>
+            <li>Reviews schrijven met sterren</li>
+            <li>Een eigen leeslijst</li>
+        </ul>
+
+        <a href="{{ route('home') }}" class="mt-8 inline-block text-amber-700 underline">Terug naar de start</a>
+    </main>
 </body>
 </html>
