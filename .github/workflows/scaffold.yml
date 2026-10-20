@@ -52,6 +52,8 @@ jobs:
           echo "::notice title=Bestanden::$(ls -A | tr '\n' ' ')"
           echo "::notice title=routes/web.php::$(cat routes/web.php | tr '\n' '|')"
           rm -rf .git node_modules vendor public/build
+          # Workflows van de starterkit mag GITHUB_TOKEN niet pushen: tijdelijk apart zetten.
+          if [ -d .github/workflows ]; then mkdir -p starter-workflows && mv .github/workflows/* starter-workflows/ && rmdir .github/workflows; fi
           cd "$GITHUB_WORKSPACE"
           cp -a /tmp/boekenbos/. ./
           git config user.name "Lantaarnbos"
