@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('home');
 
 Route::get('/hallo', function () {
-    return 'Hallo vanuit Boekenbos!';
+    return 'Welkom in '.config('app.name').'!';
 });
 
 Route::view('/over', 'over')->name('over');
