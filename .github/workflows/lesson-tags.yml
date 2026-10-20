@@ -1,0 +1,32 @@
+# Zet bij elke commit "Les X.Y.Z: ..." de tag les-X-Y-Z (de stand na die les).
+# Zo kunnen leerlingen hun code vergelijken met de voorbeeldcode van elke les.
+name: lesson-tags
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tags:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Tags bijwerken
+        shell: bash
+        run: |
+          set -eo pipefail
+          git log --reverse --format='%H %s' | while read -r sha subject; do
+            if [[ "$subject" =~ ^Les\ ([0-9]+)\.([0-9]+)\.([0-9]+): ]]; then
+              tag="les-${BASH_REMATCH[1]}-${BASH_REMATCH[2]}-${BASH_REMATCH[3]}"
+              git tag -f "$tag" "$sha" > /dev/null
+              echo "$tag -> ${sha:0:7}"
+            fi
+          done
+          git push -f origin --tags
