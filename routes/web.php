@@ -10,6 +10,14 @@ Route::get('/hallo', function () {
 
 Route::view('/over', 'over')->name('over');
 
+Route::get('/boeken', function () {
+    return 'Alle boeken';
+});
+
+Route::get('/boeken/{id}', function (int $id) {
+    return 'Boek nummer '.$id;
+})->whereNumber('id');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 });
