@@ -18,7 +18,8 @@
             <li>Een eigen leeslijst</li>
         </ul>
 
-        <a href="{{ route('home') }}" class="mt-8 inline-block text-amber-700 underline">Terug naar de start</a>
+        <a href="{{ route('books.index') }}" class="mt-8 inline-block text-amber-700 underline">Bekijk de boeken</a>
+        <a href="{{ route('home') }}" class="ml-4 mt-8 inline-block text-amber-700 underline">Terug naar de start</a>
     </main>
 </body>
 </html>
