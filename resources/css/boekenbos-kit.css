@@ -1,0 +1,194 @@
+/*
+|--------------------------------------------------------------------------
+| Boekenbos-kit: kant-en-klare opmaak
+|--------------------------------------------------------------------------
+| Gewone CSS (geen Tailwind nodig), met het voorvoegsel bb- zodat niets
+| botst met andere klassen. Kleuren en lettertypes staan bovenaan als
+| variabelen: pas ze aan en heel Boekenbos verandert mee.
+|
+| Alle klassen staan in de laag "components". Daardoor winnen Tailwind-
+| klassen zoals mt-6 of py-10 altijd, ook op hetzelfde element:
+|     <h1 class="bb-titel mt-6">  of  <main class="bb-container py-10">
+|
+| Gebruik: zet in resources/css/app.css (onder de andere @import-regels):
+|     @import './boekenbos-kit.css';
+*/
+
+:root {
+    --bb-groen: #1f3a2e;
+    --bb-groen-licht: #3f7a52;
+    --bb-amber: #f2a541;
+    --bb-amber-donker: #b8741f;
+    --bb-creme: #faf6ef;
+    --bb-papier: #ffffff;
+    --bb-inkt: #2b2420;
+    --bb-grijs: #7a6f64;
+    --bb-lijn: #e7dccb;
+    --bb-rood: #c0392b;
+    --bb-blauw: #2f6d8f;
+    --bb-radius: 14px;
+    --bb-schaduw: 0 1px 2px rgba(43, 36, 32, .06), 0 8px 24px rgba(43, 36, 32, .08);
+    --bb-font-titel: 'Lora', Georgia, 'Times New Roman', serif;
+    --bb-font-tekst: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+    /* ---------- pagina ---------- */
+
+    .bb-pagina {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--bb-creme);
+        color: var(--bb-inkt);
+        font-family: var(--bb-font-tekst);
+        line-height: 1.55;
+    }
+
+    .bb-container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+
+    .bb-titel { font-family: var(--bb-font-titel); font-weight: 700; line-height: 1.15; color: var(--bb-groen); margin: 0; }
+    .bb-titel-xl { font-size: clamp(32px, 5vw, 52px); }
+    .bb-titel-l { font-size: clamp(26px, 3.5vw, 36px); }
+    .bb-titel-m { font-size: 22px; }
+    .bb-tekst-zacht { color: var(--bb-grijs); }
+
+    /* ---------- header en navigatie ---------- */
+
+    .bb-header {
+        position: relative;
+        padding: 72px 0 64px;
+        background: var(--bb-groen) url('/images/header-bos.jpg') center / cover no-repeat;
+        color: #fff;
+    }
+
+    .bb-header .bb-titel { color: #fff; text-shadow: 0 2px 16px rgba(0, 0, 0, .45); }
+    .bb-header p { max-width: 560px; margin: 12px 0 0; font-size: 18px; color: #f3ead9; text-shadow: 0 1px 8px rgba(0, 0, 0, .5); }
+
+    .bb-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .bb-nav-logo { display: flex; align-items: center; gap: 10px; font-family: var(--bb-font-titel); font-weight: 700; font-size: 22px; color: var(--bb-groen); text-decoration: none; }
+    .bb-nav-logo img { width: 40px; height: 40px; }
+    .bb-nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bb-nav-links a { padding: 8px 12px; border-radius: 10px; color: var(--bb-inkt); text-decoration: none; font-weight: 600; }
+    .bb-nav-links a:hover, .bb-nav-links a[aria-current='page'] { background: #efe6d6; color: var(--bb-groen); }
+
+    /* ---------- knoppen ---------- */
+
+    .bb-knop {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 2px solid transparent;
+        border-radius: 12px;
+        font: 700 15px var(--bb-font-tekst);
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+
+    .bb-knop:hover { transform: translateY(-1px); }
+    .bb-knop:active { transform: translateY(1px); }
+    .bb-knop-hoofd { background: var(--bb-amber); color: #2a1a06; box-shadow: 0 3px 0 var(--bb-amber-donker); }
+    .bb-knop-groen { background: var(--bb-groen); color: #fff; box-shadow: 0 3px 0 #0f2219; }
+    .bb-knop-rand { background: transparent; color: var(--bb-groen); border-color: var(--bb-groen); }
+    .bb-knop-gevaar { background: var(--bb-rood); color: #fff; box-shadow: 0 3px 0 #8e2a20; }
+    .bb-knop-klein { min-height: 36px; padding: 0 12px; font-size: 14px; }
+
+    /* ---------- kaarten en boeken ---------- */
+
+    .bb-kaart { background: var(--bb-papier); border: 1px solid var(--bb-lijn); border-radius: var(--bb-radius); box-shadow: var(--bb-schaduw); padding: 20px; }
+
+    .bb-boeken { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 24px; }
+
+    @media (max-width: 520px) {
+        .bb-boeken { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    }
+
+    .bb-boek { display: flex; flex-direction: column; gap: 10px; color: inherit; text-decoration: none; }
+    .bb-boek-titel { font-family: var(--bb-font-titel); font-weight: 700; font-size: 17px; line-height: 1.25; color: var(--bb-groen); }
+    .bb-boek-auteur { font-size: 14px; color: var(--bb-grijs); }
+
+    .bb-cover {
+        display: block;
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        border-radius: 6px 10px 10px 6px;
+        background: #e9e1d3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 12px 24px rgba(43, 36, 32, .18);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .bb-boek:hover .bb-cover { transform: translateY(-4px) rotate(-1deg); box-shadow: 0 4px 8px rgba(0, 0, 0, .14), 0 20px 34px rgba(43, 36, 32, .24); }
+
+    .bb-detail { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 36px; align-items: start; }
+
+    @media (max-width: 640px) {
+        .bb-detail { grid-template-columns: minmax(0, 1fr); }
+        .bb-detail .bb-cover { max-width: 220px; }
+    }
+
+    /* ---------- labels en sterren ---------- */
+
+    .bb-label { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 99px; background: #e7efe9; color: var(--bb-groen-licht); font-size: 13px; font-weight: 700; }
+    .bb-label-amber { background: #fdf0dc; color: var(--bb-amber-donker); }
+
+    /* <span class="bb-sterren" style="--score: 4">★★★★★</span>  (score van 0 tot 5) */
+    .bb-sterren {
+        display: inline-block;
+        font-size: 20px;
+        letter-spacing: 2px;
+        line-height: 1;
+        background: linear-gradient(90deg, var(--bb-amber) calc(var(--score, 0) / 5 * 100%), #d9cdb9 0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* ---------- formulieren ---------- */
+
+    .bb-veld { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .bb-veld label { font-weight: 700; font-size: 15px; }
+
+    .bb-invoer {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 44px;
+        padding: 10px 14px;
+        border: 2px solid var(--bb-lijn);
+        border-radius: 10px;
+        background: #fff;
+        color: var(--bb-inkt);
+        font: 16px var(--bb-font-tekst);
+    }
+
+    .bb-invoer:focus { outline: none; border-color: var(--bb-groen-licht); box-shadow: 0 0 0 4px rgba(63, 122, 82, .15); }
+    .bb-invoer.is-fout, .bb-invoer[aria-invalid='true'] { border-color: var(--bb-rood); }
+    textarea.bb-invoer { min-height: 120px; resize: vertical; }
+    .bb-fout { color: var(--bb-rood); font-size: 14px; font-weight: 600; }
+
+    /* ---------- meldingen ---------- */
+
+    .bb-melding { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: 12px; border: 1px solid; font-weight: 600; }
+    .bb-melding-ok { background: #e9f5ec; border-color: #b9dcc3; color: #22593a; }
+    .bb-melding-fout { background: #fbeaea; border-color: #efc1bc; color: #8e2a20; }
+    .bb-melding-info { background: #e8f1f7; border-color: #bcd6e6; color: #22506a; }
+
+    /* ---------- lege toestand ---------- */
+
+    .bb-leeg { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 40px 20px; text-align: center; color: var(--bb-grijs); }
+    .bb-leeg img { width: 220px; max-width: 70%; }
+
+    /* ---------- tabel ---------- */
+
+    .bb-tabel { width: 100%; border-collapse: collapse; background: var(--bb-papier); border-radius: var(--bb-radius); overflow: hidden; box-shadow: var(--bb-schaduw); }
+    .bb-tabel th, .bb-tabel td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--bb-lijn); }
+    .bb-tabel th { background: #f3ecdf; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--bb-grijs); }
+    .bb-tabel tr:last-child td { border-bottom: none; }
+
+    /* ---------- voettekst ---------- */
+
+    .bb-voet { margin-top: 64px; padding: 28px 0; border-top: 1px solid var(--bb-lijn); color: var(--bb-grijs); font-size: 14px; }
+}

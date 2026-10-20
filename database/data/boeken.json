@@ -1,0 +1,272 @@
+[
+  {
+    "title": "Het Lantaarnbos",
+    "author": "Lotte Verbeke",
+    "year": 2021,
+    "genre": "Fantasy",
+    "pages": 312,
+    "summary": "Een meisje volgt de lantaarns in het bos en ontdekt dat elk licht een verloren herinnering bewaart.",
+    "cover": "images/covers/het-lantaarnbos.jpg"
+  },
+  {
+    "title": "De Stille Rivier",
+    "author": "Jens Maes",
+    "year": 2018,
+    "genre": "Roman",
+    "pages": 268,
+    "summary": "Twee broers varen na de dood van hun vader de rivier af die hen als kind uit elkaar dreef.",
+    "cover": "images/covers/de-stille-rivier.jpg"
+  },
+  {
+    "title": "Sterren boven Gent",
+    "author": "Amira El Idrissi",
+    "year": 2023,
+    "genre": "Roman",
+    "pages": 344,
+    "summary": "Een sterrenkundige studente en een nachtwaker raken bevriend op de daken van Gent.",
+    "cover": "images/covers/sterren-boven-gent.jpg"
+  },
+  {
+    "title": "De Laatste Trein",
+    "author": "Pieter De Wolf",
+    "year": 2016,
+    "genre": "Thriller",
+    "pages": 401,
+    "summary": "Op de laatste nachttrein naar Oostende verdwijnt een passagier, maar niemand herinnert zich hem.",
+    "cover": "images/covers/de-laatste-trein.jpg"
+  },
+  {
+    "title": "Code in de Nacht",
+    "author": "Noor Janssens",
+    "year": 2024,
+    "genre": "Non-fictie",
+    "pages": 236,
+    "summary": "Een praktische en grappige gids voor wie 's avonds leert programmeren naast een volle dagtaak.",
+    "cover": "images/covers/code-in-de-nacht.jpg"
+  },
+  {
+    "title": "Het Huis aan Zee",
+    "author": "Sam Peeters",
+    "year": 2019,
+    "genre": "Roman",
+    "pages": 290,
+    "summary": "Een familie komt elke zomer samen in hetzelfde huis aan zee, tot het verkocht moet worden.",
+    "cover": "images/covers/het-huis-aan-zee.jpg"
+  },
+  {
+    "title": "De Uil en de Vos",
+    "author": "Elise Wouters",
+    "year": 2020,
+    "genre": "Kinderboek",
+    "pages": 64,
+    "summary": "Een slimme uil en een nieuwsgierige vos lossen samen de raadsels van het bos op.",
+    "cover": "images/covers/de-uil-en-de-vos.jpg"
+  },
+  {
+    "title": "Wolken over de Polder",
+    "author": "Tom Claes",
+    "year": 2017,
+    "genre": "Poëzie",
+    "pages": 96,
+    "summary": "Korte gedichten over het weer, het vlakke land en de mensen die er wonen.",
+    "cover": "images/covers/wolken-over-de-polder.jpg"
+  },
+  {
+    "title": "Het Geheim van de Molen",
+    "author": "Fien Goossens",
+    "year": 2022,
+    "genre": "Detective",
+    "pages": 356,
+    "summary": "Een journaliste onderzoekt waarom de oude molen van het dorp elke nacht draait zonder wind.",
+    "cover": "images/covers/het-geheim-van-de-molen.jpg"
+  },
+  {
+    "title": "Reis naar het Noorden",
+    "author": "Lars Vermeulen",
+    "year": 2015,
+    "genre": "Reisverhaal",
+    "pages": 280,
+    "summary": "Met de fiets van Antwerpen naar de Noordkaap: drieduizend kilometer en één lekke band te veel.",
+    "cover": "images/covers/reis-naar-het-noorden.jpg"
+  },
+  {
+    "title": "De Bakker van Brugge",
+    "author": "Hanne Dubois",
+    "year": 2014,
+    "genre": "Historisch",
+    "pages": 420,
+    "summary": "Brugge, 1480: een bakkersdochter ontdekt dat het brood van haar vader de stad kan redden.",
+    "cover": "images/covers/de-bakker-van-brugge.jpg"
+  },
+  {
+    "title": "Kampvuurverhalen",
+    "author": "Mo Benali",
+    "year": 2023,
+    "genre": "Verhalen",
+    "pages": 188,
+    "summary": "Twaalf korte verhalen om voor te lezen bij het kampvuur, van grappig tot griezelig.",
+    "cover": "images/covers/kampvuurverhalen.jpg"
+  },
+  {
+    "title": "Het Glazen Hart",
+    "author": "Lotte Verbeke",
+    "year": 2024,
+    "genre": "Fantasy",
+    "pages": 298,
+    "summary": "Het vervolg op Het Lantaarnbos: een hart van glas moet de lantaarns opnieuw doen branden.",
+    "cover": null
+  },
+  {
+    "title": "Laatste Halte Leuven",
+    "author": "Pieter De Wolf",
+    "year": 2021,
+    "genre": "Thriller",
+    "pages": 376,
+    "summary": "Een buschauffeur vindt een tas vol geld en een briefje met zijn eigen naam.",
+    "cover": null
+  },
+  {
+    "title": "Groene Vingers",
+    "author": "Sara Willems",
+    "year": 2020,
+    "genre": "Non-fictie",
+    "pages": 212,
+    "summary": "Moestuinieren op een klein balkon, met tips voor elke maand van het jaar.",
+    "cover": null
+  },
+  {
+    "title": "De Vergeten Bibliotheek",
+    "author": "Wout Mertens",
+    "year": 2019,
+    "genre": "Fantasy",
+    "pages": 332,
+    "summary": "Achter een boekenkast in een oude bibliotheek ligt een stad waar alle vergeten verhalen wonen.",
+    "cover": null
+  },
+  {
+    "title": "Koffie om Middernacht",
+    "author": "Amira El Idrissi",
+    "year": 2020,
+    "genre": "Roman",
+    "pages": 254,
+    "summary": "Een nachtcafé in Antwerpen en de mensen die er elke nacht dezelfde tafel kiezen.",
+    "cover": null
+  },
+  {
+    "title": "Het Raadsel van Rubens",
+    "author": "Fien Goossens",
+    "year": 2024,
+    "genre": "Detective",
+    "pages": 368,
+    "summary": "Een schilderij van Rubens blijkt een code te bevatten die naar een verdwenen schat leidt.",
+    "cover": null
+  },
+  {
+    "title": "Klein Maar Dapper",
+    "author": "Elise Wouters",
+    "year": 2022,
+    "genre": "Kinderboek",
+    "pages": 48,
+    "summary": "Een muis die bang is van alles, redt toch het hele dorp.",
+    "cover": null
+  },
+  {
+    "title": "Brood en Spelen",
+    "author": "Hanne Dubois",
+    "year": 2018,
+    "genre": "Historisch",
+    "pages": 388,
+    "summary": "Het verhaal van een rondreizend theatergezelschap in de zeventiende eeuw.",
+    "cover": null
+  },
+  {
+    "title": "Dagboek van een Developer",
+    "author": "Noor Janssens",
+    "year": 2021,
+    "genre": "Non-fictie",
+    "pages": 204,
+    "summary": "Een jaar uit het leven van een junior developer: bugs, deadlines en kleine overwinningen.",
+    "cover": null
+  },
+  {
+    "title": "Wind in de Duinen",
+    "author": "Tom Claes",
+    "year": 2021,
+    "genre": "Poëzie",
+    "pages": 88,
+    "summary": "Gedichten over de kust in alle seizoenen.",
+    "cover": null
+  },
+  {
+    "title": "De Brug over de Schelde",
+    "author": "Jens Maes",
+    "year": 2022,
+    "genre": "Roman",
+    "pages": 310,
+    "summary": "Een ingenieur en een schipper staan aan twee kanten van een brug die er nooit kwam.",
+    "cover": null
+  },
+  {
+    "title": "Sneeuw in April",
+    "author": "Sara Willems",
+    "year": 2017,
+    "genre": "Roman",
+    "pages": 276,
+    "summary": "Een onverwachte sneeuwbui sluit een dorp een week af van de buitenwereld.",
+    "cover": null
+  },
+  {
+    "title": "De Sleutel van het Belfort",
+    "author": "Wout Mertens",
+    "year": 2023,
+    "genre": "Avontuur",
+    "pages": 244,
+    "summary": "Drie vrienden vinden een sleutel die past op een deur die niet zou mogen bestaan.",
+    "cover": null
+  },
+  {
+    "title": "Langs de Leie",
+    "author": "Lars Vermeulen",
+    "year": 2019,
+    "genre": "Reisverhaal",
+    "pages": 198,
+    "summary": "Wandelen langs de Leie, van de bron in Frankrijk tot in Gent.",
+    "cover": null
+  },
+  {
+    "title": "Mijn Eerste Website",
+    "author": "Noor Janssens",
+    "year": 2018,
+    "genre": "Non-fictie",
+    "pages": 176,
+    "summary": "Stap voor stap je eerste website maken, met HTML, CSS en een beetje PHP.",
+    "cover": null
+  },
+  {
+    "title": "Het Lied van de Zee",
+    "author": "Sam Peeters",
+    "year": 2024,
+    "genre": "Roman",
+    "pages": 302,
+    "summary": "Een oude zeeman vertelt zijn kleindochter het verhaal achter zijn enige lied.",
+    "cover": null
+  },
+  {
+    "title": "Vos op Avontuur",
+    "author": "Elise Wouters",
+    "year": 2024,
+    "genre": "Kinderboek",
+    "pages": 56,
+    "summary": "De vos uit De Uil en de Vos gaat voor het eerst alleen op reis.",
+    "cover": null
+  },
+  {
+    "title": "Vonken",
+    "author": "Mo Benali",
+    "year": 2025,
+    "genre": "Verhalen",
+    "pages": 210,
+    "summary": "Nieuwe verhalen over kleine momenten die alles veranderen.",
+    "cover": null
+  }
+]
