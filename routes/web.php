@@ -13,9 +13,7 @@ Route::view('/over', 'over')->name('over');
 
 Route::get('/boeken', [BookController::class, 'index'])->name('books.index');
 
-Route::get('/boeken/{id}', function (int $id) {
-    return 'Boek nummer '.$id;
-})->whereNumber('id')->name('books.show');
+Route::get('/boeken/{id}', [BookController::class, 'show'])->whereNumber('id')->name('books.show');
 
 Route::redirect('/boekenlijst', '/boeken');
 
