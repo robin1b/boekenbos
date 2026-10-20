@@ -12,11 +12,13 @@ Route::view('/over', 'over')->name('over');
 
 Route::get('/boeken', function () {
     return 'Alle boeken';
-});
+})->name('books.index');
 
 Route::get('/boeken/{id}', function (int $id) {
     return 'Boek nummer '.$id;
-})->whereNumber('id');
+})->whereNumber('id')->name('books.show');
+
+Route::redirect('/boekenlijst', '/boeken');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
