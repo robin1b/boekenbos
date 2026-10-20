@@ -11,8 +11,11 @@
         <h1 class="text-3xl font-bold">Alle boeken</h1>
 
         <ul class="mt-6 space-y-2">
-            @foreach ($books as $book)
-                <li>{{ $book['title'] }} <span class="text-stone-500">door {{ $book['author'] }}</span></li>
+            @foreach ($books as $id => $book)
+                <li>
+                    <a href="{{ route('books.show', $id) }}" class="font-semibold text-amber-700 underline">{{ $book['title'] }}</a>
+                    <span class="text-stone-500">door {{ $book['author'] }}</span>
+                </li>
             @endforeach
         </ul>
     </main>
